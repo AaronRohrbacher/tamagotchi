@@ -32,4 +32,11 @@ export class FeedIt {
       return true;
     }
   }
+
+  water() {
+    this.waterLevel = 15;
+  }
+
+
+
 }

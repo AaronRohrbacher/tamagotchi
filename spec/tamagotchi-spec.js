@@ -10,6 +10,7 @@ describe('FeedIt', function() {
     mithu.setThirst();
     mithu.setPlay();
     mithu.areYouSad();
+
   });
 
   afterEach(function() {
@@ -43,5 +44,11 @@ describe('FeedIt', function() {
     expect(mithu.areYouSad()).toEqual(true);
   });
 
+  it('should have a water level of 15 if it is given water', function() {
+    jasmine.clock().tick(8001)
+    mithu.water();
+    expect(mithu.waterLevel).toEqual(15);
+  });
 
+  
 });
