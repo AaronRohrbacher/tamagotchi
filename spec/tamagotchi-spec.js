@@ -9,6 +9,7 @@ describe('FeedIt', function() {
     mithu.setHunger();
     mithu.setThirst();
     mithu.setPlay();
+    mithu.areYouSad();
   });
 
   afterEach(function() {
@@ -35,6 +36,11 @@ describe('FeedIt', function() {
   it('should have a play level of 10 after 10001 milliseconds', function() {
     jasmine.clock().tick(10001);
     expect(mithu.playLevel).toEqual(10);
+  });
+
+  it('should start to feel unhappy if play levels drop below 12', function() {
+    mithu.playLevel = 11;
+    expect(mithu.areYouSad()).toEqual(true);
   });
 
 

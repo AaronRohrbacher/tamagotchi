@@ -24,4 +24,12 @@ export class FeedIt {
       this.playLevel--;
     }, (1000));
   }
+
+  areYouSad() {
+    if (this.playLevel > 12) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
