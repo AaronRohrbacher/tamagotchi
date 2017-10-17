@@ -1,7 +1,31 @@
-<head>
-  <link rel="stylesheet" href="build/css/vendor.css">
-  <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
-  <script src="build/js/vendor.min.js"></script>
-  <script type="text/javascript" src="build/js/app.js"></script>
-  <title>Tamagotchi</title>
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href = "css/styles.css">
+    <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Tamagotchi</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id = "game">
+        <form class="form-control" id ="takeCare">
+          <button type = "submit">Save me!</button>
+        </form>
+        <p>Food: </p>
+        <p id = "foodLevel"></p>
+        <p>Water: </p>
+        <p id = "waterLevel"></p>
+        <p>Play: </p>
+        <p id = "playLevel"></p>
+        <p>Counter:</p>
+        <p id = "counter"></p>
+      </div>
+      <div id = "DEATH" class="hideAtFirst">
+        <h1>DEAD</h1>
+      </div>
+    </div><!-- end container -->
+  </body>
+</html>

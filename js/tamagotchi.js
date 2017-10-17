@@ -5,25 +5,19 @@ export class FeedIt {
     this.foodLevel = 10;
     this.waterLevel = 15;
     this.playLevel = 20;
+    this.counter = 5;
   }
 
-  setHunger() {
-    setInterval(() => {
-      this.foodLevel--;
-    }, (1000));
-  }
-
-  setThirst() {
-    setInterval(() => {
-     this.waterLevel--;
-   }, (1000));
-  }
-
-  setPlay() {
-    setInterval(() => {
-      this.playLevel--;
-    }, (1000));
-  }
+setTime() {
+  setInterval(() => {
+    this.foodLevel--;
+    this.waterLevel--;
+    this.playLevel--;
+    if (this.waterLevel === 10 || this.foodLevel === 5 || this.playLevel === 15) {
+      this.timer();
+    }
+  }, (1000));
+}
 
   areYouSad() {
     if (this.playLevel > 12) {
@@ -33,10 +27,16 @@ export class FeedIt {
     }
   }
 
-  water() {
+  takeCare() {
     this.waterLevel = 15;
+    this.foodLevel = 10;
+    this.playLevel = 20;
+    this.counter = 5;
   }
 
-
-
+  timer() {
+    setInterval(() => {
+      this.counter--;
+    }, (1000));
+  }
 }

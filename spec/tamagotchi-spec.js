@@ -6,12 +6,7 @@ describe('FeedIt', function() {
   beforeEach(function() {
     mithu = new FeedIt('Mithu');
     jasmine.clock().install();
-    mithu.setHunger();
-    mithu.setThirst();
-    mithu.setPlay();
-    mithu.areYouSad();
-    mithu.water();
-
+    mithu.setTime();
   });
 
   afterEach(function() {
@@ -47,17 +42,12 @@ describe('FeedIt', function() {
 
   it('should have a water level of 15 if it is given water', function() {
     jasmine.clock().tick(8001)
-    mithu.water();
+    mithu.takeCare();
     expect(mithu.waterLevel).toEqual(15);
   });
 
-  it('should have a water level of 15 if it is given water', function() {
-    jasmine.clock().tick(8001)
-    mithu.water();
-    expect(mithu.waterLevel).toEqual(15);
+  it('should start the counter after 5 seconds', function() {
+    jasmine.clock().tick(6001)
+    expect(mithu.counter).toEqual(4);
   });
-
-  
-
-
 });
